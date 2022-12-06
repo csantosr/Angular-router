@@ -25,8 +25,8 @@ const routes: Routes = [
         component: HomeComponent
       },
       {
-        path: 'category/:id',
-        component: CategoryComponent
+        path: 'category',
+        loadChildren: () => import('./pages/category/category.module').then((m) => m.CategoryModule)
       },
       {
         path: 'login',
