@@ -32,10 +32,6 @@ const routes: Routes = [
     component: MyCartComponent
   },
   {
-    path: 'not-found',
-    component: NotFoundComponent
-  },
-  {
     path: 'profile',
     component: ProfileComponent
   },
@@ -46,7 +42,11 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
-  }
+  },
+  {
+    path: '**',
+    component: NotFoundComponent
+  },
 ];
 
 @NgModule({
