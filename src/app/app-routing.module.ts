@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LayoutComponent } from './website/components/layout/layout.component';
 import { CategoryComponent } from './website/pages/category/category.component';
 import { HomeComponent } from './website/pages/home/home.component';
 import { LoginComponent } from './website/pages/login/login.component';
@@ -11,42 +12,49 @@ import { RecoveryComponent } from './website/pages/recovery/recovery.component';
 import { RegisterComponent } from './website/pages/register/register.component';
 
 const routes: Routes = [
+
   {
     path: '',
-    redirectTo: '/home',
-    pathMatch: 'full'
-  },
-  {
-    path: 'home',
-    component: HomeComponent
-  },
-  {
-    path: 'category/:id',
-    component: CategoryComponent
-  },
-  {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: 'my-cart',
-    component: MyCartComponent
-  },
-  {
-    path: 'profile',
-    component: ProfileComponent
-  },
-  {
-    path: 'recovery',
-    component: RecoveryComponent
-  },
-  {
-    path: 'register',
-    component: RegisterComponent
-  },
-  {
-    path: 'product/:id',
-    component: ProductDetailComponent
+    component: LayoutComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: '/home',
+        pathMatch: 'full'
+      },
+      {
+        path: 'home',
+        component: HomeComponent
+      },
+      {
+        path: 'category/:id',
+        component: CategoryComponent
+      },
+      {
+        path: 'login',
+        component: LoginComponent
+      },
+      {
+        path: 'my-cart',
+        component: MyCartComponent
+      },
+      {
+        path: 'profile',
+        component: ProfileComponent
+      },
+      {
+        path: 'recovery',
+        component: RecoveryComponent
+      },
+      {
+        path: 'register',
+        component: RegisterComponent
+      },
+      {
+        path: 'product/:id',
+        component: ProductDetailComponent
+      },
+    ]
   },
   {
     path: '**',
